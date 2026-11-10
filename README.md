@@ -132,6 +132,15 @@ Full data: `results/summary.csv`. Graphs: `results/p95_delay_ms.png`, `results/l
 ![p95 delay](results/p95_delay_ms.png)
 ![loss](results/loss_pct.png)
 
+### Reference run without congestion (10 agents, no flood)
+
+| Mode | p95 delay (ms) | Alert latency (ms) | Loss (%) |
+|---|---|---|---|
+| baseline | 7.73 | 0.37 | 0 |
+| qos | 4.93 | 5.56 | 0 |
+
+Without the flood, both modes are in the low-millisecond range, and the difference in alert latency is within single-sample noise. This confirms that the degradation of the baseline above comes from congestion, and that priority queueing does not penalise the uncongested case.
+
 ### Observations
 - Under congestion, baseline delay and loss grow with the number of agents. At 40 agents, alert latency is about 5.4 s and 19 % of reports are lost.
 - With priority queueing (`qos`, `dynamic`), alert latency stays around 1 to 2.5 ms and no reports are lost, even at 40 agents.

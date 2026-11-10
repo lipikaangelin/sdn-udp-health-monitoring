@@ -28,7 +28,7 @@ if rows:
         for metric in ("p95_delay_ms", "loss_pct"):
             plt.figure()
             for m in sorted({r["mode"] for r in rows}):
-                pts = sorted((int(r["agents"]), r[metric]) for r in rows if r["mode"] == m and r[metric] != "")
+                pts = sorted((int(r["agents"]), r[metric]) for r in rows if r["mode"] == m and r["noise"] == "noiseon" and r[metric] != "")
                 plt.plot([p[0] for p in pts], [p[1] for p in pts], marker="o", label=m)
             plt.xlabel("number of agents"); plt.ylabel(metric); plt.legend(); plt.grid(True)
             plt.savefig(f"results/{metric}.png", dpi=120)

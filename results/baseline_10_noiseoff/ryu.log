@@ -1,0 +1,8 @@
+loading app /home/lipika-angelin/Desktop/health-sdn/controller.py
+loading app ryu.controller.ofp_handler
+instantiating app /home/lipika-angelin/Desktop/health-sdn/controller.py of HealthSDN
+MODE=baseline prio=False
+instantiating app ryu.controller.ofp_handler of OFPHandler
+control channel listening on UDP 9999
+CTRL {'cmd': 'congestion'} from 10.0.0.100
+CTRL {'cmd': 'block', 'ip': '10.0.0.200'} from 10.0.0.100
